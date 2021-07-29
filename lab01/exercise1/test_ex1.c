@@ -7,6 +7,7 @@ int main(int argc, char **argv) {
     printf("Running tests...\n\n");
     /************ Part 1 Test Cases ************/
     char *str = "hello world!";
+    char *str2 = "";
 
     int num_l = num_occurrences(str, 'l');
     assert(num_l == 3);
@@ -14,6 +15,11 @@ int main(int argc, char **argv) {
     int num_z = num_occurrences(str, 'z');
     assert(num_z == 0);
 
+    int num_3 = num_occurrences(str, 'h');
+    assert(num_3 == 1);
+
+    int num_4 = num_occurrences(str2, 'h');
+    assert(num_4 == 0);
     /* TODO: Think of a scenario that is not tested by the current test cases. Create one additional test case to test this scenario. */
 
     printf("Congrats! If you have made it to this line, your Part 1 Test cases are all passing!\n");
@@ -34,6 +40,16 @@ int main(int argc, char **argv) {
     assert(dna_seq_2.C_count == 3);
     assert(dna_seq_2.G_count == 0);
     assert(dna_seq_2.T_count == 0);
+
+    DNA_sequence dna_seq_3;
+    strcpy(dna_seq_3.sequence, "DFDEDEEER");
+    compute_nucleotide_occurrences(&dna_seq_3);
+    assert(dna_seq_3.A_count == 0);
+    assert(dna_seq_3.C_count == 0);
+    assert(dna_seq_3.G_count == 0);
+    assert(dna_seq_3.T_count == 0);
+
+
 
     /* TODO: Think of a scenario that is not tested by the current test cases. Create one additional test case to test this scenario. */
 

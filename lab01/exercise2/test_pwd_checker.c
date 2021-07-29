@@ -11,6 +11,7 @@ int main() {
     bool test1 = check_password(test1_first, test1_last, test1_pwd);
     assert(test1);
 
+
     printf("Congrats! The first test case is now passing. You should remove the assert statements that you added "
            "to pwd_checker.c because these correspond to the first test case and will not necessarily work for the remaining "
            "test cases!\n\n");
