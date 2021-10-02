@@ -1,7 +1,7 @@
 .globl factorial
 
 .data
-n: .word 8
+n: .word 10
 
 .text
 main:
@@ -21,4 +21,31 @@ main:
     ecall # Exit
 
 factorial:
-    # YOUR CODE HERE
+    #StartEpiloque
+    addi sp,sp,-12
+    sw s0, 0(sp)
+    sw ra, 4(sp)
+    sw a0, 8(sp)
+    #EndEpilogue
+    
+
+    #StartBODY
+    addi s0, x0, 2
+    blt a0, s0, answer
+    else:
+    addi a0 a0, -1
+    jal ra factorial
+    #EndBody
+    
+    #StartPrologue
+    mv t0 a0
+    lw s0, 0(sp)
+    lw ra, 4(sp)
+    lw a0, 8(sp)
+    mul a0 t0, a0
+    addi sp,sp,12
+    #EndPrologue
+    answer: 
+    jr ra
+    
+    jr ra

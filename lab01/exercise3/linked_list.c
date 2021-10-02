@@ -5,13 +5,13 @@
 /* returns a new node whose data is set to DATA and next is set to NULL */
 Node *create_node(int data) {
     /* Don't worry about malloc yet! It is not in the scope of this lab */
-    struct Node *new_node = malloc(sizeof(struct Node));
+    struct Node *new_node   = malloc(sizeof(struct Node));
     if (new_node == NULL) {
         perror("Malloc failed\n");
     }
     new_node->data = data;
     new_node->next = NULL;
-    return new_node;
+    return new_node; // returns
 }
 
 /* Don't worry about free(), it is not in the scope of this lab */
